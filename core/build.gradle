@@ -11,8 +11,16 @@ dependencies {
     implementation Dependencies.Jetpack.navigationUi
     implementation Dependencies.Jetpack.navigationFragment
 
+    implementation Dependencies.Networking.loggingInterceptor
+    implementation Dependencies.Networking.retrofit
+    implementation Dependencies.Networking.retrofitRx
+    implementation Dependencies.Networking.moshiConverter
+
     implementation Dependencies.DI.daggerHilt
     kapt Dependencies.DI.daggerHiltCompiler
+
+    implementation Dependencies.Rx.java
+    implementation Dependencies.Rx.kotlin
 
     testImplementation Dependencies.Test.junit
 

@@ -5,11 +5,12 @@ import com.example.core.base.view.BaseActivity
 import com.example.core.navigation.StartDestination
 import com.example.shopping.R
 import com.example.shopping.databinding.ShoppingHostActivityBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ShoppingHostActivity : BaseActivity<ShoppingHostActivityBinding>() {
 
-    override val theme: Int = R.style.Theme_CoolBlueTask_shopping
+    override val activityTheme: Int = R.style.Theme_CoolBlueTask_shopping
 
     override val graph: Int = R.navigation.shopping_nav_graph
 

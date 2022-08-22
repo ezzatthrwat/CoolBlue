@@ -59,6 +59,7 @@ android {
 dependencies {
 
     implementation project(":shopping")
+    implementation project(":core")
 
     implementation Dependencies.Kotlin.stdlib
     implementation Dependencies.AndroidX.ktx

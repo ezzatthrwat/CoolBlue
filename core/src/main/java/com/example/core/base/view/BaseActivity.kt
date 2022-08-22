@@ -10,7 +10,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 import com.example.core.navigation.StartDestination
-import javax.inject.Named
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
@@ -21,7 +20,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         private set
 
     @get:StyleRes
-    protected abstract val theme: Int
+    protected abstract val activityTheme: Int
 
     @get:NavigationRes
     abstract val graph: Int
@@ -34,7 +33,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     abstract fun onCreateBinding(inflater: LayoutInflater): VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(theme)
+        setTheme(activityTheme)
 
         super.onCreate(savedInstanceState)
 

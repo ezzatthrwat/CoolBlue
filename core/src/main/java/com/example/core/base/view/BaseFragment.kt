@@ -17,7 +17,6 @@ import com.example.core.navigation.CoordinatorEvent
 import com.example.core.viewstate.ViewAction
 import com.example.core.viewstate.ViewEvent
 import com.example.core.viewstate.ViewState
-import javax.inject.Named
 
 abstract class BaseFragment<
         VS : ViewState,

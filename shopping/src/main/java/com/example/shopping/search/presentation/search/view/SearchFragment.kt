@@ -13,6 +13,7 @@ import com.example.shopping.search.presentation.search.viewstate.SearchViewEvent
 import com.example.shopping.search.presentation.search.viewstate.SearchViewState
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchFragment : BaseFragment<
         SearchViewState,
         SearchViewEvent,

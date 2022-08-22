@@ -35,7 +35,9 @@ object Versions {
         const val retrofit = "2.9.0"
         const val moshi = "1.13.0"
         const val okhttp = "4.9.1"
-        const val coroutines = "1.6.0"
+        const val rxjava = "3.1.1"
+        const val rxkotlin = "3.0.1"
+        const val rxandroid = "3.0.0"
     }
 
     object Test {

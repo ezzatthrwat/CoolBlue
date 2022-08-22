@@ -59,6 +59,7 @@ object Dependencies {
 
     object Networking {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Libraries.retrofit}"
+        const val retrofitRx = "com.squareup.retrofit2:adapter-rxjava3:${Versions.Libraries.retrofit}"
         const val moshiConverter =
             "com.squareup.retrofit2:converter-moshi:${Versions.Libraries.retrofit}"
         const val moshi =
@@ -70,6 +71,12 @@ object Dependencies {
         const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.Libraries.okhttp}"
         const val loggingInterceptor =
             "com.squareup.okhttp3:logging-interceptor:${Versions.Libraries.okhttp}"
+    }
+
+    object Rx {
+        const val java = "io.reactivex.rxjava3:rxjava:${Versions.Libraries.rxjava}"
+        const val kotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.Libraries.rxkotlin}"
+        const val android = "io.reactivex.rxjava3:rxandroid:${Versions.Libraries.rxandroid}"
     }
 
     object DI {
