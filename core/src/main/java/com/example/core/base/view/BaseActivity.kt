@@ -10,6 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 import com.example.core.navigation.StartDestination
+import javax.inject.Named
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 

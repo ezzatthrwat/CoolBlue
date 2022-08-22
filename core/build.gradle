@@ -11,6 +11,9 @@ dependencies {
     implementation Dependencies.Jetpack.navigationUi
     implementation Dependencies.Jetpack.navigationFragment
 
+    implementation Dependencies.DI.daggerHilt
+    kapt Dependencies.DI.daggerHiltCompiler
+
     testImplementation Dependencies.Test.junit
 
     androidTestImplementation Dependencies.AndroidTest.runner

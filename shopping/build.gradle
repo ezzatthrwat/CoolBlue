@@ -8,10 +8,16 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 dependencies {
 
+    implementation project(":core")
+    
     implementation Dependencies.Kotlin.stdlib
     implementation Dependencies.AndroidX.ktx
     implementation Dependencies.AndroidX.appcompat
     implementation Dependencies.Google.material
+
+    implementation Dependencies.Jetpack.lifecycleRuntime
+    implementation Dependencies.Jetpack.navigationUi
+    implementation Dependencies.Jetpack.navigationFragment
 
     implementation Dependencies.DI.daggerHilt
     kapt Dependencies.DI.daggerHiltCompiler

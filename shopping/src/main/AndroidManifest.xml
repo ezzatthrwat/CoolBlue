@@ -3,7 +3,7 @@
     package="com.example.shopping">
 
     <application>
-        <activity android:name=".search.presentation.SearchActivity"
+        <activity android:name=".search.presentation.shopping.ShoppingHostActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

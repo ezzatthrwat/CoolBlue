@@ -17,6 +17,7 @@ import com.example.core.navigation.CoordinatorEvent
 import com.example.core.viewstate.ViewAction
 import com.example.core.viewstate.ViewEvent
 import com.example.core.viewstate.ViewState
+import javax.inject.Named
 
 abstract class BaseFragment<
         VS : ViewState,
@@ -30,7 +31,7 @@ abstract class BaseFragment<
     protected abstract val viewModel: VM
 
     @get:StyleRes
-    protected abstract val theme: Int
+    protected abstract val fragmentTheme: Int
 
     private var _binding: VB? = null
 
@@ -42,7 +43,7 @@ abstract class BaseFragment<
         savedInstanceState: Bundle?
     ): View? {
         // create ContextThemeWrapper from the original Activity Context with the custom theme.
-        val contextThemeWrapper: Context = ContextThemeWrapper(requireActivity(), theme)
+        val contextThemeWrapper: Context = ContextThemeWrapper(requireActivity(), fragmentTheme)
 
         // clone the inflater using the ContextThemeWrapper.
         val localInflater = inflater.cloneInContext(contextThemeWrapper)
