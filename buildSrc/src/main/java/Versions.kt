@@ -1,6 +1,4 @@
-/**
- * Created by Ahmed Abd-Elmeged on 4/18/20.
- */
+
 object Versions {
 
     object Build {
@@ -14,6 +12,7 @@ object Versions {
     object AndroidX {
         const val appcompat = "1.5.0"
         const val activity = "1.3.1"
+        const val fragment = "1.5.2"
         const val constraintlayout = "2.1.1"
         const val ktx = "1.8.0"
         const val recyclerview = "1.2.1"
@@ -22,6 +21,7 @@ object Versions {
     object Jetpack {
         const val lifecycle = "2.4.0"
         const val test = "2.1.0"
+        const val navigation = "2.5.1"
     }
 
     object Google {

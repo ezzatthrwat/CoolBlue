@@ -1,0 +1,17 @@
+import dependencies.Dependencies
+
+apply from: "$rootDir/config/android.gradle"
+
+dependencies {
+    implementation Dependencies.Kotlin.stdlib
+    implementation Dependencies.Jetpack.lifecycleRuntime
+    implementation Dependencies.AndroidX.appcompat
+    implementation Dependencies.AndroidX.activity
+    implementation Dependencies.AndroidX.fragment
+    implementation Dependencies.Jetpack.navigationUi
+    implementation Dependencies.Jetpack.navigationFragment
+
+    testImplementation Dependencies.Test.junit
+
+    androidTestImplementation Dependencies.AndroidTest.runner
+}

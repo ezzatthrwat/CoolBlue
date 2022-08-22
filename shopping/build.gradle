@@ -4,6 +4,8 @@ apply from: "$rootDir/config/android.gradle"
 
 apply plugin: 'org.jetbrains.kotlin.android'
 
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
 dependencies {
 
     implementation Dependencies.Kotlin.stdlib

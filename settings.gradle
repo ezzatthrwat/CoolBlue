@@ -1,2 +1,3 @@
 include ':app'
 include ':shopping'
+include ':core'

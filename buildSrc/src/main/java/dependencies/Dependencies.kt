@@ -19,6 +19,7 @@ object Dependencies {
         const val constraintlayout =
             "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.constraintlayout}"
         const val activity = "androidx.activity:activity:${Versions.AndroidX.activity}"
+        const val fragment = "androidx.fragment:fragment-ktx:${Versions.AndroidX.fragment}"
         const val ktx = "androidx.core:core-ktx:${Versions.AndroidX.ktx}"
         const val recyclerview =
             "androidx.recyclerview:recyclerview:${Versions.AndroidX.recyclerview}"
@@ -43,6 +44,13 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-process:${Versions.Jetpack.lifecycle}"
         const val lifecycleReactiveStreams =
             "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.Jetpack.lifecycle}"
+
+        const val navigationUi =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.Jetpack.navigation}"
+        const val navigationFragment =
+            "androidx.navigation:navigation-ui-ktx:${Versions.Jetpack.navigation}"
+        const val navigationSafeArgsPlugin =
+            "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.Jetpack.navigation}"
     }
 
     object Google {
