@@ -4,6 +4,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdk Config.compileSdk
@@ -62,4 +63,7 @@ dependencies {
     implementation Dependencies.Kotlin.stdlib
     implementation Dependencies.AndroidX.ktx
     implementation Dependencies.AndroidX.appcompat
+
+    implementation Dependencies.DI.daggerHilt
+    kapt Dependencies.DI.daggerHiltCompiler
 }

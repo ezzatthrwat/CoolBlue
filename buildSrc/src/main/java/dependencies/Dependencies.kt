@@ -65,8 +65,11 @@ object Dependencies {
     }
 
     object DI {
-        const val dagger = "com.google.dagger:dagger:${Versions.Libraries.dagger}"
-        const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.Libraries.dagger}"
+        const val daggerHiltPlugin =
+            "com.google.dagger:hilt-android-gradle-plugin:${Versions.Libraries.daggerHilt}"
+        const val daggerHilt = "com.google.dagger:hilt-android:${Versions.Libraries.daggerHilt}"
+        const val daggerHiltCompiler =
+            "com.google.dagger:hilt-compiler:${Versions.Libraries.daggerHilt}"
     }
 
     object Util {

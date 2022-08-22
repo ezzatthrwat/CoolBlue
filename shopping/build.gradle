@@ -11,4 +11,6 @@ dependencies {
     implementation Dependencies.AndroidX.appcompat
     implementation Dependencies.Google.material
 
+    implementation Dependencies.DI.daggerHilt
+    kapt Dependencies.DI.daggerHiltCompiler
 }

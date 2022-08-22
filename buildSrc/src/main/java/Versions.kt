@@ -31,7 +31,7 @@ object Versions {
     object Libraries {
         const val glide = "4.12.0"
         const val timber = "5.0.1"
-        const val dagger = "2.38.1"
+        const val daggerHilt = "2.38.1"
         const val retrofit = "2.9.0"
         const val moshi = "1.13.0"
         const val okhttp = "4.9.1"
