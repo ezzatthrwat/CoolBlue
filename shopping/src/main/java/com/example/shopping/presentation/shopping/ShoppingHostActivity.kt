@@ -1,4 +1,4 @@
-package com.example.shopping.search.presentation.shopping
+package com.example.shopping.presentation.shopping
 
 import android.view.LayoutInflater
 import com.example.core.base.view.BaseActivity

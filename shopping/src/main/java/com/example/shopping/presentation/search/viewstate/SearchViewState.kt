@@ -1,4 +1,4 @@
-package com.example.shopping.search.presentation.search.viewstate
+package com.example.shopping.presentation.search.viewstate
 
 import com.example.core.viewstate.ViewState
 

@@ -1,4 +1,4 @@
-package com.example.shopping.search.presentation.search.view
+package com.example.shopping.presentation.search.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,11 +6,11 @@ import androidx.fragment.app.viewModels
 import com.example.core.base.view.BaseFragment
 import com.example.shopping.R
 import com.example.shopping.databinding.SearchFragmentBinding
-import com.example.shopping.search.presentation.search.viewmodel.SearchViewModel
-import com.example.shopping.search.presentation.search.viewstate.SearchCoordinatorEvent
-import com.example.shopping.search.presentation.search.viewstate.SearchViewAction
-import com.example.shopping.search.presentation.search.viewstate.SearchViewEvent
-import com.example.shopping.search.presentation.search.viewstate.SearchViewState
+import com.example.shopping.presentation.search.viewmodel.SearchViewModel
+import com.example.shopping.presentation.search.viewstate.SearchCoordinatorEvent
+import com.example.shopping.presentation.search.viewstate.SearchViewAction
+import com.example.shopping.presentation.search.viewstate.SearchViewEvent
+import com.example.shopping.presentation.search.viewstate.SearchViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

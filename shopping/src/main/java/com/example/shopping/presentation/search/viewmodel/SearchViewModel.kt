@@ -1,11 +1,11 @@
-package com.example.shopping.search.presentation.search.viewmodel
+package com.example.shopping.presentation.search.viewmodel
 
 import com.example.core.base.viewmodel.BaseViewModel
 import com.example.core.util.NetworkChecker
-import com.example.shopping.search.presentation.search.viewstate.SearchCoordinatorEvent
-import com.example.shopping.search.presentation.search.viewstate.SearchViewAction
-import com.example.shopping.search.presentation.search.viewstate.SearchViewEvent
-import com.example.shopping.search.presentation.search.viewstate.SearchViewState
+import com.example.shopping.presentation.search.viewstate.SearchCoordinatorEvent
+import com.example.shopping.presentation.search.viewstate.SearchViewAction
+import com.example.shopping.presentation.search.viewstate.SearchViewEvent
+import com.example.shopping.presentation.search.viewstate.SearchViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
