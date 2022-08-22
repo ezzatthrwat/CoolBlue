@@ -1,0 +1,14 @@
+import dependencies.Dependencies
+
+apply from: "$rootDir/config/android.gradle"
+
+apply plugin: 'org.jetbrains.kotlin.android'
+
+dependencies {
+
+    implementation Dependencies.Kotlin.stdlib
+    implementation Dependencies.AndroidX.ktx
+    implementation Dependencies.AndroidX.appcompat
+    implementation Dependencies.Google.material
+
+}
