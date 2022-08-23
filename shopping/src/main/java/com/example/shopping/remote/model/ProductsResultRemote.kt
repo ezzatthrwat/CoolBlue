@@ -2,16 +2,17 @@ package com.example.shopping.remote.model
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 data class ProductsResultRemote(
-    @Json(name = "currentPage")
+    @field:Json(name = "currentPage")
     val currentPage: Int?,
-    @Json(name = "pageCount")
+    @field:Json(name = "pageCount")
     val pageCount: Int?,
-    @Json(name = "pageSize")
+    @field:Json(name = "pageSize")
     val pageSize: Int?,
-    @Json(name = "products")
+    @field:Json(name = "products")
     val productRemotes: List<ProductRemote>?,
-    @Json(name = "totalResults")
+    @field:Json(name = "totalResults")
     val totalResults: Int?
 )

@@ -4,29 +4,29 @@ package com.example.shopping.remote.model
 import com.squareup.moshi.Json
 
 data class ProductRemote(
-    @Json(name = "availabilityState")
+    @field:Json(name = "availabilityState")
     val availabilityState: Int?,
-    @Json(name = "coolbluesChoiceInformationTitle")
+    @field:Json(name = "coolbluesChoiceInformationTitle")
     val coolbluesChoiceInformationTitle: String?,
-    @Json(name = "listPriceExVat")
+    @field:Json(name = "listPriceExVat")
     val listPriceExVat: Float?,
-    @Json(name = "listPriceIncVat")
+    @field:Json(name = "listPriceIncVat")
     val listPriceIncVat: Float?,
-    @Json(name = "nextDayDelivery")
+    @field:Json(name = "nextDayDelivery")
     val nextDayDelivery: Boolean?,
-    @Json(name = "productId")
+    @field:Json(name = "productId")
     val productId: Long?,
-    @Json(name = "productImage")
+    @field:Json(name = "productImage")
     val productImage: String?,
-    @Json(name = "productName")
+    @field:Json(name = "productName")
     val productName: String?,
-    @Json(name = "promoIconRemote")
+    @field:Json(name = "promoIconRemote")
     val promoIconRemote: PromoIconRemote?,
-    @Json(name = "reviewInformationRemote")
+    @field:Json(name = "reviewInformationRemote")
     val reviewInformationRemote: ReviewInformationRemote?,
-    @Json(name = "salesPriceIncVat")
+    @field:Json(name = "salesPriceIncVat")
     val salesPriceIncVat: Float?,
-    @Json(name = "USPs")
+    @field:Json(name = "USPs")
     val uSPs: List<String>?
 ) {
     fun availabilityState() : AvailabilityStateRemote {

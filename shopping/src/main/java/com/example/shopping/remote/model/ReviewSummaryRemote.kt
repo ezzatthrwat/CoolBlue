@@ -2,10 +2,12 @@ package com.example.shopping.remote.model
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
 
 data class ReviewSummaryRemote(
-    @Json(name = "reviewAverage")
+    @field:Json(name = "reviewAverage")
     val reviewAverage: Double?,
-    @Json(name = "reviewCount")
+    @field:Json(name = "reviewCount")
     val reviewCount: Int?
 )

@@ -27,7 +27,7 @@ class ProductsEntityMapper @Inject constructor(
         val essentialParams = listOf(
             EssentialParam(remote.currentPage, "currentPage"),
             EssentialParam(remote.pageCount, "pageCount"),
-            EssentialParam(remote.productRemotes, "productRemotes"),
+            EssentialParam(remote.productRemotes, "products"),
         )
 
         requireEssentialParams(rawObject = remote, essentialParams = essentialParams)
