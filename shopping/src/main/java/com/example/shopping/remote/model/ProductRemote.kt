@@ -20,9 +20,9 @@ data class ProductRemote(
     val productImage: String?,
     @field:Json(name = "productName")
     val productName: String?,
-    @field:Json(name = "promoIconRemote")
+    @field:Json(name = "promoIcon")
     val promoIconRemote: PromoIconRemote?,
-    @field:Json(name = "reviewInformationRemote")
+    @field:Json(name = "reviewInformation")
     val reviewInformationRemote: ReviewInformationRemote?,
     @field:Json(name = "salesPriceIncVat")
     val salesPriceIncVat: Float?,

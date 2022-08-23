@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="?background"
-    android:layout_margin="@dimen/size_8">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/choiceInfoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/size_12"
         android:visibility="gone"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +21,7 @@
         android:layout_width="@dimen/size_100"
         android:layout_height="@dimen/size_150"
         android:layout_marginTop="@dimen/size_8"
-        android:background="?background"
+        android:layout_marginStart="@dimen/size_12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/choiceInfoTextView"
         tools:ignore="contentDescription"/>
@@ -33,6 +32,7 @@
         android:layout_height="wrap_content"
         android:maxLines="3"
         android:layout_marginStart="@dimen/size_5"
+        android:layout_marginEnd="@dimen/size_12"
         android:textColor="@color/brand_blue"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         android:textStyle="bold"
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toEndOf="@+id/productRatingBar"
         app:layout_constraintTop_toTopOf="@+id/productRatingBar"
         app:layout_constraintBottom_toBottomOf="@+id/productRatingBar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/productNameTextView"
         tools:text="100 reviews"/>
 
     <TextView
@@ -74,7 +74,7 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintTop_toBottomOf="@+id/productRatingBar"
         app:layout_constraintStart_toStartOf="@+id/productRatingBar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/productNameTextView"
         tools:text="\u25CF product property"/>
 
     <TextView
@@ -85,20 +85,20 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
         app:layout_constraintTop_toBottomOf="@+id/productDescriptionTextView"
         app:layout_constraintStart_toStartOf="@+id/productDescriptionTextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/productNameTextView"
         tools:text="999.99"/>
 
     <TextView
         android:id="@+id/retailPriceTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-        app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/addToCartButton"
         app:layout_constraintStart_toStartOf="@+id/productPriceTextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
         tools:text="Retail price 1,219,00"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/deliveredTomorrowTextView"
@@ -109,31 +109,56 @@
         android:drawablePadding="@dimen/size_5"
         android:gravity="center"
         android:textColor="@color/green"
+        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintTop_toBottomOf="@+id/retailPriceTextView"
         app:layout_constraintStart_toStartOf="@+id/retailPriceTextView"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/soldOutTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/temporarily_sold_out"
+        android:drawablePadding="@dimen/size_5"
+        android:gravity="center"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintTop_toBottomOf="@+id/retailPriceTextView"
+        app:layout_constraintStart_toStartOf="@+id/retailPriceTextView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addToCartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_12"
         app:icon="@drawable/ic_cart"
         android:backgroundTint="@color/green"
         app:iconTint="@color/white"
         style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintBottom_toTopOf="@+id/dividerView"
+        app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
+        app:layout_constraintEnd_toEndOf="@+id/productNameTextView"/>
 
     <TextView
         android:id="@+id/promotionTextView"
-        android:layout_width="@dimen/size_60"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/size_12"
         android:visibility="gone"
+        android:layout_marginStart="@dimen/size_12"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/productImageView"
         tools:text="Cole blue choise"
         tools:visibility="visible"/>
 
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_1"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
