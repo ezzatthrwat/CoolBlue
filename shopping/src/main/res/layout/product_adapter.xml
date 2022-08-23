@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?background"
+    android:layout_margin="@dimen/size_8">
+
+    <TextView
+        android:id="@+id/choiceInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="cool blue choice info title"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/productImageView"
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_150"
+        android:layout_marginTop="@dimen/size_8"
+        android:background="?background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choiceInfoTextView"
+        tools:ignore="contentDescription"/>
+
+    <TextView
+        android:id="@+id/productNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:layout_marginStart="@dimen/size_5"
+        android:textColor="@color/brand_blue"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/productImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productImageView"
+        tools:text="Product name"/>
+
+    <RatingBar
+        android:id="@+id/productRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_marginTop="@dimen/size_8"
+        android:theme="@style/RatingBar"
+        android:isIndicator="false"
+        android:numStars="5"
+        app:layout_constraintTop_toBottomOf="@+id/productNameTextView"
+        app:layout_constraintStart_toStartOf="@+id/productNameTextView"
+        tools:rating="3"/>
+
+    <TextView
+        android:id="@+id/reviewsCountTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_5"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintStart_toEndOf="@+id/productRatingBar"
+        app:layout_constraintTop_toTopOf="@+id/productRatingBar"
+        app:layout_constraintBottom_toBottomOf="@+id/productRatingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="100 reviews"/>
+
+    <TextView
+        android:id="@+id/productDescriptionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_8"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintTop_toBottomOf="@+id/productRatingBar"
+        app:layout_constraintStart_toStartOf="@+id/productRatingBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="\u25CF product property"/>
+
+    <TextView
+        android:id="@+id/productPriceTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_8"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+        app:layout_constraintTop_toBottomOf="@+id/productDescriptionTextView"
+        app:layout_constraintStart_toStartOf="@+id/productDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="999.99"/>
+
+    <TextView
+        android:id="@+id/retailPriceTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
+        app:layout_constraintStart_toStartOf="@+id/productPriceTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Retail price 1,219,00"
+        tools:visibility="visible"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/deliveredTomorrowTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delivered_tomorrow"
+        android:drawableStart="@drawable/ic_check"
+        android:drawablePadding="@dimen/size_5"
+        android:gravity="center"
+        android:textColor="@color/green"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintTop_toBottomOf="@+id/retailPriceTextView"
+        app:layout_constraintStart_toStartOf="@+id/retailPriceTextView"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addToCartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_cart"
+        android:backgroundTint="@color/green"
+        app:iconTint="@color/white"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/promotionTextView"
+        android:layout_width="@dimen/size_60"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_12"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Cole blue choise"
+        tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
