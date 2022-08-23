@@ -1,0 +1,13 @@
+package com.example.shopping.data.datasource
+
+import com.example.shopping.data.model.ProductsEntity
+import io.reactivex.rxjava3.core.Single
+
+interface ProductsRemoteDataSource {
+
+    fun getProducts(
+         query: String,
+         page: Int
+    ): Single<ProductsEntity>
+
+}
