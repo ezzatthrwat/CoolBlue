@@ -3,19 +3,19 @@ package com.example.shopping.remote.mapper
 import com.example.core.exception.EssentialParam
 import com.example.core.exception.requireEssentialParams
 import com.example.core.mapper.Mapper
-import com.example.shopping.data.model.ProductsEntity
+import com.example.shopping.data.model.ProductsResultEntity
 import com.example.shopping.remote.model.ProductsResultRemote
 import javax.inject.Inject
 
 class ProductsEntityMapper @Inject constructor(
     private val productEntityMapper: ProductEntityMapper
-) : Mapper<ProductsResultRemote, ProductsEntity> {
+) : Mapper<ProductsResultRemote, ProductsResultEntity> {
 
-    override fun map(input: ProductsResultRemote) : ProductsEntity {
+    override fun map(input: ProductsResultRemote) : ProductsResultEntity {
 
         assertEssentialParams(input)
 
-        return ProductsEntity (
+        return ProductsResultEntity (
             currentPage = input.currentPage!!,
             pageCount = input.pageCount!!,
             productEntities = productEntityMapper.mapList(input.productRemotes!!),
