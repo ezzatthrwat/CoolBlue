@@ -10,7 +10,9 @@ import com.example.shopping.presentation.search.model.AvailabilityStateUi
 import com.example.shopping.presentation.search.model.ProductUiModel
 import javax.inject.Inject
 
-class ProductUiMapper @Inject constructor() : Mapper<Product, ProductUiModel> {
+class ProductUiMapper @Inject constructor(
+    private val promoIconUiMapper: PromoIconUiMapper
+) : Mapper<Product, ProductUiModel> {
 
     override fun map(input: Product): ProductUiModel {
         return ProductUiModel(
@@ -22,7 +24,7 @@ class ProductUiMapper @Inject constructor() : Mapper<Product, ProductUiModel> {
             nextDayDelivery = input.nextDayDelivery,
             productImage = input.productImage,
             productName = input.productName,
-            promoIconType = input.promoIcon?.type ?: "",
+            promoIconType = input.promoIcon?.let {promoIconUiMapper.map(it)},
             reviewAverage = input.reviewInformation.reviewSummary.reviewAverage,
             reviewCount = "${input.reviewInformation.reviewSummary.reviewCount} reviews",
             salesPriceIncVat = input.salesPriceIncVat.toString(),

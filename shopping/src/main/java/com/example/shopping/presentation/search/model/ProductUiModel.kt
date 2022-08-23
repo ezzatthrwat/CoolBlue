@@ -10,7 +10,7 @@ data class ProductUiModel(
     val productId: Long,
     val productImage: String,
     val productName: String,
-    val promoIconType: String,
+    val promoIconType: PromoIconUiModel?,
     val reviewAverage: Float,
     val reviewCount: String,
     val salesPriceIncVat: String,
