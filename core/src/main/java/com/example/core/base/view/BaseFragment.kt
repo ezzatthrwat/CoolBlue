@@ -58,7 +58,7 @@ abstract class BaseFragment<
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.viewState.observe(viewLifecycleOwner, { renderViewState(it) })
+        viewModel.viewState.observe(viewLifecycleOwner) { renderViewState(it) }
         viewModel.viewEvent.observe(viewLifecycleOwner, EventObserver { renderViewEvent(it) })
         viewModel.coordinatorEvent.observe(
             viewLifecycleOwner,

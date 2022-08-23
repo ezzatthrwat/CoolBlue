@@ -10,6 +10,7 @@ dependencies {
     implementation Dependencies.AndroidX.fragment
     implementation Dependencies.Jetpack.navigationUi
     implementation Dependencies.Jetpack.navigationFragment
+    implementation Dependencies.AndroidX.recyclerview
 
     implementation Dependencies.Networking.loggingInterceptor
     implementation Dependencies.Networking.retrofit
