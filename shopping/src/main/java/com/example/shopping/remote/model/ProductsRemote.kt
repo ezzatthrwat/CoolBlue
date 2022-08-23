@@ -11,7 +11,7 @@ data class ProductsRemote(
     @Json(name = "pageSize")
     val pageSize: Int?,
     @Json(name = "productRemotes")
-    val productRemotes: List<ProductRemote?>?,
+    val productRemotes: List<ProductRemote>?,
     @Json(name = "totalResults")
     val totalResults: Int?
 )
