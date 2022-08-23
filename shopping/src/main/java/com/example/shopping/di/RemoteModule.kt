@@ -7,16 +7,14 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.scopes.ActivityScoped
+import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(SingletonComponent::class)
 internal abstract class RemoteModule {
 
     companion object {
-        @ActivityScoped
         @Provides
         @JvmStatic
         fun provideProductsApi(retrofit: Retrofit): ProductsApi {
@@ -24,7 +22,7 @@ internal abstract class RemoteModule {
         }
     }
 
-    @ActivityScoped
+
     @Binds
     abstract fun bindProductsRemoteDataSource(dataSource: ProductsRemoteDataSourceImpl): ProductsRemoteDataSource
 }

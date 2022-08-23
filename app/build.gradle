@@ -68,4 +68,9 @@ dependencies {
 
     implementation Dependencies.DI.daggerHilt
     kapt Dependencies.DI.daggerHiltCompiler
+
+    implementation Dependencies.Networking.loggingInterceptor
+    implementation Dependencies.Networking.retrofit
+    implementation Dependencies.Networking.retrofitRx
+    implementation Dependencies.Networking.moshiConverter
 }

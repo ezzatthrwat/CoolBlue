@@ -6,6 +6,4 @@ object Config {
     const val targetSdk = 32
 
     val javaVersion = JavaVersion.VERSION_11
-
-    const val testInstrumentationRunner = "com.capiter.core.testing.runner.CapiterTestRunner"
 }
