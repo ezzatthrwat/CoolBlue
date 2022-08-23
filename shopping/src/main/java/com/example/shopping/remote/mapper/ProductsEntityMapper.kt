@@ -4,14 +4,14 @@ import com.example.core.exception.EssentialParam
 import com.example.core.exception.requireEssentialParams
 import com.example.core.mapper.Mapper
 import com.example.shopping.data.model.ProductsEntity
-import com.example.shopping.remote.model.ProductsRemote
+import com.example.shopping.remote.model.ProductsResultRemote
 import javax.inject.Inject
 
 class ProductsEntityMapper @Inject constructor(
     private val productEntityMapper: ProductEntityMapper
-) : Mapper<ProductsRemote, ProductsEntity> {
+) : Mapper<ProductsResultRemote, ProductsEntity> {
 
-    override fun map(input: ProductsRemote) : ProductsEntity {
+    override fun map(input: ProductsResultRemote) : ProductsEntity {
 
         assertEssentialParams(input)
 
@@ -22,7 +22,7 @@ class ProductsEntityMapper @Inject constructor(
         )
     }
 
-    private fun assertEssentialParams(remote: ProductsRemote) {
+    private fun assertEssentialParams(remote: ProductsResultRemote) {
 
         val essentialParams = listOf(
             EssentialParam(remote.currentPage, "currentPage"),
