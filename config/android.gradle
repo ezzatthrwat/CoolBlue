@@ -15,7 +15,7 @@ android {
         minSdkVersion Config.minSdk
         targetSdkVersion Config.targetSdk
 
-        testInstrumentationRunner Config.testInstrumentationRunner
+//        testInstrumentationRunner Config.testInstrumentationRunner
 
         consumerProguardFiles "consumer-rules.pro"
     }

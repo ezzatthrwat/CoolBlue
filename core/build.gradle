@@ -12,6 +12,8 @@ dependencies {
     implementation Dependencies.Jetpack.navigationFragment
     implementation Dependencies.AndroidX.recyclerview
 
+    implementation Dependencies.Image.glide
+
     implementation Dependencies.Networking.loggingInterceptor
     implementation Dependencies.Networking.retrofit
     implementation Dependencies.Networking.retrofitRx
