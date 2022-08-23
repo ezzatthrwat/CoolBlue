@@ -10,7 +10,7 @@ data class ProductEntity(
     val productImage: String,
     val productName: String,
     val promoIconEntity: PromoIconEntity?,
-    val reviewInformationEntity: ReviewInformationEntity?,
+    val reviewInformationEntity: ReviewInformationEntity,
     val salesPriceIncVat: Float,
     val uSPs: List<String>
 )

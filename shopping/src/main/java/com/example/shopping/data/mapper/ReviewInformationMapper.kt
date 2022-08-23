@@ -7,13 +7,11 @@ import javax.inject.Inject
 
 class ReviewInformationMapper @Inject constructor(
     private val reviewSummaryMapper: ReviewSummaryMapper
-) : Mapper<ReviewInformationEntity?, ReviewInformation?> {
+) : Mapper<ReviewInformationEntity, ReviewInformation> {
 
-    override fun map(input: ReviewInformationEntity?): ReviewInformation? {
-       return input?.let {
-           ReviewInformation(
-               reviewSummary = reviewSummaryMapper.map(it.reviewSummaryEntity)
-           )
-       }
+    override fun map(input: ReviewInformationEntity): ReviewInformation {
+       return ReviewInformation(
+           reviewSummary = reviewSummaryMapper.map(input.reviewSummaryEntity)
+       )
     }
 }

@@ -27,7 +27,7 @@ class ProductEntityMapper @Inject constructor(
             productImage = input.productImage!!,
             productName = input.productName!!,
             promoIconEntity = promoIconEntityMapper.map(input.promoIconRemote),
-            reviewInformationEntity = reviewInformationEntityMapper.map(input.reviewInformationRemote),
+            reviewInformationEntity = reviewInformationEntityMapper.map(input.reviewInformationRemote!!),
             salesPriceIncVat = input.salesPriceIncVat!!,
             uSPs = input.uSPs!!
         )

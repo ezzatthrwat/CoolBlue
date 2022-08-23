@@ -9,24 +9,19 @@ import javax.inject.Inject
 
 class ReviewInformationEntityMapper @Inject constructor(
     private val reviewSummaryEntityMapper: ReviewSummaryEntityMapper
-) : Mapper<ReviewInformationRemote?, ReviewInformationEntity?> {
+) : Mapper<ReviewInformationRemote, ReviewInformationEntity> {
 
-    override fun map(input: ReviewInformationRemote?): ReviewInformationEntity? {
-
-       return input?.let {
-           assertEssentialParams(it)
-
-           ReviewInformationEntity(
-               reviewSummaryEntity = reviewSummaryEntityMapper.map(it.reviewSummaryRemote!!)
-           )
-       }
+    override fun map(input: ReviewInformationRemote): ReviewInformationEntity {
+        assertEssentialParams(input)
+        return ReviewInformationEntity(
+            reviewSummaryEntity = reviewSummaryEntityMapper.map(input.reviewSummaryRemote!!)
+        )
     }
 
     private fun assertEssentialParams(remote: ReviewInformationRemote) {
         val essentialParams = listOf(
             EssentialParam(remote.reviewSummaryRemote, "reviewSummaryRemote"),
         )
-
         requireEssentialParams(rawObject = remote, essentialParams = essentialParams)
     }
 }

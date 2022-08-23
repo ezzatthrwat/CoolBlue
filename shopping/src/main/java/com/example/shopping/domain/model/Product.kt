@@ -10,7 +10,7 @@ data class Product(
     val productImage: String,
     val productName: String,
     val promoIcon: PromoIcon?,
-    val reviewInformation: ReviewInformation?,
+    val reviewInformation: ReviewInformation,
     val salesPriceIncVat: Float,
     val uSPs: List<String>
 )
