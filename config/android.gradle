@@ -14,6 +14,7 @@ android {
     defaultConfig {
         minSdkVersion Config.minSdk
         targetSdkVersion Config.targetSdk
+        buildToolsVersion Config.buildTools
 
 //        testInstrumentationRunner Config.testInstrumentationRunner
 

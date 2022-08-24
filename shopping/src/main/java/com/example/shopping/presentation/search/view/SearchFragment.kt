@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.ConcatAdapter
-import com.example.core.adapter.pagingloader.PagingLoaderAdapter
 import com.example.core.base.view.BaseFragment
 import com.example.core.extension.onChange
 import com.example.core.extension.onEndReached
@@ -36,10 +34,7 @@ class SearchFragment : BaseFragment<
 
     override val fragmentTheme: Int = R.style.Theme_CoolBlueTask_shopping
 
-
     private lateinit var productsAdapter: ProductsAdapter
-    private lateinit var productPagingLoader: PagingLoaderAdapter
-    private lateinit var productsConcatAdapter: ConcatAdapter
 
     override fun onCreateBinding(
         inflater: LayoutInflater,
@@ -60,10 +55,8 @@ class SearchFragment : BaseFragment<
 
     private fun setupProductsRecyclerView() {
         setupAdapters()
-
         binding.productsRecyclerView.onEndReached { postAction(SearchViewAction.LoadNextPage) }
-        binding.productsRecyclerView.setHasFixedSize(true)
-        binding.productsRecyclerView.adapter = productsConcatAdapter
+        binding.productsRecyclerView.adapter = productsAdapter
     }
 
     private fun setupAdapters() {
@@ -84,8 +77,6 @@ class SearchFragment : BaseFragment<
             },
             onMailClicked = { postAction(SearchViewAction.SendMailAction) }
         )
-        productPagingLoader = PagingLoaderAdapter()
-        productsConcatAdapter = ConcatAdapter(productsAdapter, productPagingLoader)
     }
 
     override fun renderViewState(viewState: SearchViewState) {
@@ -99,7 +90,7 @@ class SearchFragment : BaseFragment<
             }
             is SearchViewState.Success -> {
                 productsAdapter.submitList(viewState.products)
-                productPagingLoader.isLoading = viewState.loadingNextPage
+                binding.loadingProgressBar.isVisible = viewState.loadingNextPage
             }
             is SearchViewState.Error ->
                 shortSnackbar(binding.searchContainer, R.string.server_error, requireContext())
