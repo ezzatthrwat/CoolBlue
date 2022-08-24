@@ -1,5 +1,6 @@
 package com.example.shopping.test.factory
 import android.text.SpannedString
+import androidx.core.text.buildSpannedString
 import com.example.core.model.TextResource
 import com.example.core_testing.factory.DataFactory.randomBoolean
 import com.example.core_testing.factory.DataFactory.randomFloat
@@ -17,7 +18,7 @@ object ProductFactory {
     fun makeProductUiModel() = ProductUiModel(
         availabilityState = AvailabilityStateUi.AVAILABLE,
         coolbluesChoiceInformationTitle = randomString(),
-        listPriceIncVat = SpannedString.valueOf(randomString()),
+        listPriceIncVat = buildSpannedString { append(randomString()) },
         nextDayDelivery = randomBoolean(),
         productId = 1L,
         productImage = randomString(),
@@ -26,7 +27,7 @@ object ProductFactory {
         reviewAverage = randomFloat(),
         reviewCount = TextResource.fromText(randomString()),
         salesPriceIncVat = randomString(),
-        uSPs = SpannedString.valueOf(randomString())
+        uSPs = buildSpannedString { append(randomString()) }
     )
 
     fun makeProduct() = Product(
