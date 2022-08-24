@@ -23,7 +23,7 @@ class SearchViewModel @Inject constructor(
     private val loadProduct = PublishSubject.create<GetProductsUseCase.Params>()
 
     override val initViewState: SearchViewState =
-        SearchViewState.Loading.also { updateViewState(it) }
+        SearchViewState.InitState.also { updateViewState(it) }
 
     init {
         initProductsSearchObservable()
@@ -54,6 +54,7 @@ class SearchViewModel @Inject constructor(
                     updateViewState(success.copy(products = listOf()))
                 }
             } else {
+                updateViewState(SearchViewState.Loading)
                 loadProduct.onNext(GetProductsUseCase.Params(searchQuery))
             }
         }
