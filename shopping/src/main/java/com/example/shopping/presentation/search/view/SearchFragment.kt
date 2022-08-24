@@ -9,7 +9,6 @@ import androidx.fragment.app.viewModels
 import com.example.core.base.view.BaseFragment
 import com.example.core.extension.onChange
 import com.example.core.extension.onEndReached
-import com.example.core.extension.shortSnackbar
 import com.example.core.extension.showToast
 import com.example.shopping.R
 import com.example.shopping.databinding.FragmentSearchBinding
@@ -93,20 +92,20 @@ class SearchFragment : BaseFragment<
                 binding.loadingProgressBar.isVisible = viewState.loadingNextPage
             }
             is SearchViewState.Error ->
-                shortSnackbar(binding.searchContainer, R.string.server_error, requireContext())
+                showToast(requireContext(), R.string.server_error)
         }
     }
 
     override fun renderViewEvent(viewEvent: SearchViewEvent) {
         when (viewEvent) {
             is SearchViewEvent.ProductsNextPageError ->
-                shortSnackbar(binding.searchContainer, R.string.server_error, requireContext())
+                showToast(requireContext(), R.string.server_error)
             is SearchViewEvent.ShowProductIdToast ->
                 showToast(requireContext(), "${viewEvent.productId}")
             is SearchViewEvent.ShowSendEmailToast ->
                 showToast(requireContext(), "Send Email")
             is SearchViewEvent.NoInternet ->
-                shortSnackbar(binding.searchContainer, R.string.internet_error, requireContext())
+                showToast(requireContext(), R.string.internet_error)
         }
     }
 
