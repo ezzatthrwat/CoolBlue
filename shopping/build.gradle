@@ -30,6 +30,7 @@ dependencies {
     implementation Dependencies.Networking.moshiConverter
 
     testImplementation project(":shopping:test")
+    testImplementation project(":core-testing")
     testImplementation Dependencies.Test.junit
     testImplementation Dependencies.Test.core
     testImplementation Dependencies.Test.arch

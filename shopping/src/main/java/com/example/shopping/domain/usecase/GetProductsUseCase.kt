@@ -1,5 +1,6 @@
 package com.example.shopping.domain.usecase
 
+import androidx.annotation.VisibleForTesting
 import com.example.core.exception.ParamMissingException
 import com.example.core.scheduler.SchedulerProvider
 import com.example.core.usecase.ObservableUseCase
@@ -67,6 +68,11 @@ class GetProductsUseCase @Inject constructor(
     fun nextPage() {
         page++
         pagination.onNext(page)
+    }
+
+    @VisibleForTesting
+    fun currentList(): List<Product> {
+        return results.toList()
     }
 
     data class Params(val searchQuery: String)
