@@ -9,10 +9,14 @@ import androidx.core.view.isVisible
 import com.example.core.adapter.BaseListAdapter
 import com.example.core.extension.loadImage
 import com.example.shopping.databinding.AdapterProductBinding
+import com.example.shopping.presentation.search.model.AvailabilityStateUi
 import com.example.shopping.presentation.search.model.ProductUiModel
 
-class ProductsAdapter :
-    BaseListAdapter<ProductUiModel, AdapterProductBinding>(diffCallback = ProductsDiffUtil) {
+class ProductsAdapter(
+    private val onProductItemClicked: (Long) -> Unit,
+    private val onAddToCartClicked: (Long) -> Unit,
+    private val onMailClicked: () -> Unit
+) : BaseListAdapter<ProductUiModel, AdapterProductBinding>(diffCallback = ProductsDiffUtil) {
 
     override fun onCreateBinding(
         inflater: LayoutInflater,
@@ -35,7 +39,9 @@ class ProductsAdapter :
         bindInformationTitle(binding, item)
         bindRetailPriceTextView(binding, item)
         bindPromoType(binding, item, context)
-        bindAvailabilityStatus(binding, item, context)
+        bindAvailabilityStatus(binding, item)
+
+        binding.root.setOnClickListener { onProductItemClicked.invoke(item.productId) }
     }
 
     private fun bindInformationTitle(binding: AdapterProductBinding, item: ProductUiModel) {
@@ -73,30 +79,24 @@ class ProductsAdapter :
 
     private fun bindAvailabilityStatus(
         binding: AdapterProductBinding,
-        item: ProductUiModel,
-        context: Context
+        item: ProductUiModel
     ) {
 
         with(item.availabilityState) {
             when (this) {
-                com.example.shopping.presentation.search.model.AvailabilityStateUi.AVAILABLE -> {
+                AvailabilityStateUi.AVAILABLE -> {
                     binding.soldOutTextView.isVisible = false
+                    binding.sendMailButton.isVisible = false
                     binding.deliveredTomorrowTextView.isVisible = true
+                    binding.addToCartButton.isVisible = true
+                    binding.addToCartButton.setOnClickListener { onAddToCartClicked.invoke(item.productId) }
                 }
-                com.example.shopping.presentation.search.model.AvailabilityStateUi.SOLD_OUT -> {
+                AvailabilityStateUi.SOLD_OUT -> {
                     binding.soldOutTextView.isVisible = true
+                    binding.sendMailButton.isVisible = true
                     binding.deliveredTomorrowTextView.isVisible = false
-                    binding.addToCartButton.backgroundTintList =
-                        android.content.res.ColorStateList.valueOf(
-                            ContextCompat.getColor(
-                                context,
-                                com.example.shopping.R.color.brand_blue
-                            )
-                        )
-                    binding.addToCartButton.icon = ContextCompat.getDrawable(
-                        context,
-                        com.example.shopping.R.drawable.ic_mail
-                    )
+                    binding.addToCartButton.isVisible = false
+                    binding.sendMailButton.setOnClickListener { onMailClicked.invoke() }
                 }
             }
         }

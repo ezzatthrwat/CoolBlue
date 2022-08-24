@@ -142,6 +142,20 @@
         app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
         app:layout_constraintEnd_toEndOf="@+id/productNameTextView"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sendMailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/size_12"
+        app:icon="@drawable/ic_mail"
+        android:visibility="gone"
+        android:backgroundTint="@color/brand_blue"
+        app:iconTint="@color/white"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        app:layout_constraintBottom_toTopOf="@+id/dividerView"
+        app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
+        app:layout_constraintEnd_toEndOf="@+id/productNameTextView"/>
+
     <TextView
         android:id="@+id/promotionTextView"
         android:layout_width="0dp"

@@ -14,6 +14,4 @@ sealed class SearchViewState : ViewState {
     ) : SearchViewState()
 
     object Error : SearchViewState()
-
-    object NoInternet : SearchViewState()
 }

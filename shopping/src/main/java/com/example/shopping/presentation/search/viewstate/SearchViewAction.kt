@@ -8,7 +8,9 @@ sealed class SearchViewAction : ViewAction {
 
     object LoadNextPage : SearchViewAction()
 
-    object AddToCartAction : SearchViewAction()
+    data class AddToCartAction(val productId: Long) : SearchViewAction()
+
+    data class OpenProductDetails(val productId: Long) : SearchViewAction()
 
     object SendMailAction : SearchViewAction()
 
