@@ -6,14 +6,17 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-parcelize'
 
+apply plugin: 'dagger.hilt.android.plugin'
+
 android {
     compileSdkVersion Config.compileSdk
 
     defaultConfig {
         minSdkVersion Config.minSdk
         targetSdkVersion Config.targetSdk
+        buildToolsVersion Config.buildTools
 
-        testInstrumentationRunner Config.testInstrumentationRunner
+//        testInstrumentationRunner Config.testInstrumentationRunner
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -46,10 +49,6 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        canary {
-            initWith debug
         }
     }
 }

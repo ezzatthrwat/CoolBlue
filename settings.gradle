@@ -1,2 +1,5 @@
 include ':app'
 include ':shopping'
+include ':core'
+include ':core-testing'
+include ':shopping:test'

@@ -19,6 +19,7 @@ object Dependencies {
         const val constraintlayout =
             "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.constraintlayout}"
         const val activity = "androidx.activity:activity:${Versions.AndroidX.activity}"
+        const val fragment = "androidx.fragment:fragment-ktx:${Versions.AndroidX.fragment}"
         const val ktx = "androidx.core:core-ktx:${Versions.AndroidX.ktx}"
         const val recyclerview =
             "androidx.recyclerview:recyclerview:${Versions.AndroidX.recyclerview}"
@@ -43,6 +44,13 @@ object Dependencies {
             "androidx.lifecycle:lifecycle-process:${Versions.Jetpack.lifecycle}"
         const val lifecycleReactiveStreams =
             "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.Jetpack.lifecycle}"
+
+        const val navigationUi =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.Jetpack.navigation}"
+        const val navigationFragment =
+            "androidx.navigation:navigation-ui-ktx:${Versions.Jetpack.navigation}"
+        const val navigationSafeArgsPlugin =
+            "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.Jetpack.navigation}"
     }
 
     object Google {
@@ -51,6 +59,7 @@ object Dependencies {
 
     object Networking {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Libraries.retrofit}"
+        const val retrofitRx = "com.squareup.retrofit2:adapter-rxjava3:${Versions.Libraries.retrofit}"
         const val moshiConverter =
             "com.squareup.retrofit2:converter-moshi:${Versions.Libraries.retrofit}"
         const val moshi =
@@ -64,9 +73,18 @@ object Dependencies {
             "com.squareup.okhttp3:logging-interceptor:${Versions.Libraries.okhttp}"
     }
 
+    object Rx {
+        const val java = "io.reactivex.rxjava3:rxjava:${Versions.Libraries.rxjava}"
+        const val kotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.Libraries.rxkotlin}"
+        const val android = "io.reactivex.rxjava3:rxandroid:${Versions.Libraries.rxandroid}"
+    }
+
     object DI {
-        const val dagger = "com.google.dagger:dagger:${Versions.Libraries.dagger}"
-        const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.Libraries.dagger}"
+        const val daggerHiltPlugin =
+            "com.google.dagger:hilt-android-gradle-plugin:${Versions.Libraries.daggerHilt}"
+        const val daggerHilt = "com.google.dagger:hilt-android:${Versions.Libraries.daggerHilt}"
+        const val daggerHiltCompiler =
+            "com.google.dagger:hilt-compiler:${Versions.Libraries.daggerHilt}"
     }
 
     object Util {

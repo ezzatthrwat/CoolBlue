@@ -2,8 +2,9 @@ import dependencies.Dependencies
 
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
-apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdk Config.compileSdk
@@ -14,8 +15,9 @@ android {
         targetSdk Config.targetSdk
         versionCode 1
         versionName "1.0"
+        buildToolsVersion Config.buildTools
 
-        testInstrumentationRunner Config.testInstrumentationRunner
+//        testInstrumentationRunner Config.testInstrumentationRunner
 
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -58,8 +60,18 @@ android {
 dependencies {
 
     implementation project(":shopping")
+    implementation project(":core")
 
     implementation Dependencies.Kotlin.stdlib
     implementation Dependencies.AndroidX.ktx
     implementation Dependencies.AndroidX.appcompat
+    implementation Dependencies.Google.material
+
+    implementation Dependencies.DI.daggerHilt
+    kapt Dependencies.DI.daggerHiltCompiler
+
+    implementation Dependencies.Networking.loggingInterceptor
+    implementation Dependencies.Networking.retrofit
+    implementation Dependencies.Networking.retrofitRx
+    implementation Dependencies.Networking.moshiConverter
 }
