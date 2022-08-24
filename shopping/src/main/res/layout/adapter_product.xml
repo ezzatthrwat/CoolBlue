@@ -142,8 +142,8 @@
         android:textStyle="bold"
         android:visibility="gone"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
-        app:layout_constraintTop_toBottomOf="@+id/retailPriceTextView"
-        app:layout_constraintStart_toStartOf="@+id/retailPriceTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/retailPriceTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/retailPriceTitleTextView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addToCartButton"
