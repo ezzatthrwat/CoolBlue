@@ -9,7 +9,7 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 dependencies {
 
     implementation project(":core")
-    
+
     implementation Dependencies.Kotlin.stdlib
     implementation Dependencies.AndroidX.ktx
     implementation Dependencies.AndroidX.appcompat
@@ -28,4 +28,12 @@ dependencies {
     implementation Dependencies.Networking.retrofit
     implementation Dependencies.Networking.retrofitRx
     implementation Dependencies.Networking.moshiConverter
+
+    testImplementation project(":shopping:test")
+    testImplementation Dependencies.Test.junit
+    testImplementation Dependencies.Test.core
+    testImplementation Dependencies.Test.arch
+    testImplementation Dependencies.Test.mockitoKotlin
+    testImplementation Dependencies.Test.mockitoInline
+
 }

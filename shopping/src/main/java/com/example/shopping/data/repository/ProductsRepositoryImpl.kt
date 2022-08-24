@@ -13,7 +13,8 @@ class ProductsRepositoryImpl @Inject constructor(
 ) : ProductsRepository {
 
     override fun getProducts(query: String, page: Int): Single<ProductsResult> {
-       return productsRemoteDataSource.getProducts(query, page).map { productsResultMapper.map(it) }
+        return productsRemoteDataSource.getProducts(query, page)
+            .map { productsResultMapper.map(it) }
     }
 
 }
