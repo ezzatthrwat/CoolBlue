@@ -15,5 +15,7 @@ sealed class SearchViewState : ViewState {
         val empty: Boolean,
     ) : SearchViewState()
 
+    object ClearList : SearchViewState()
+
     object Error : SearchViewState()
 }

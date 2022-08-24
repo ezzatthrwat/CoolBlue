@@ -94,6 +94,9 @@ class SearchFragment : BaseFragment<
         when (viewState) {
             is SearchViewState.InitState -> {}
             is SearchViewState.Loading -> {}
+            is SearchViewState.ClearList -> {
+                productsAdapter.submitList(null)
+            }
             is SearchViewState.Success -> {
                 productsAdapter.submitList(viewState.products)
                 productPagingLoader.isLoading = viewState.loadingNextPage
@@ -117,7 +120,7 @@ class SearchFragment : BaseFragment<
     }
 
     override fun coordinatorEvent(coordinatorEvent: SearchCoordinatorEvent) {
-        when(coordinatorEvent) {
+        when (coordinatorEvent) {
             is SearchCoordinatorEvent.OpenDetails ->
                 showToast(requireContext(), "Open ${coordinatorEvent.productId} Details")
         }

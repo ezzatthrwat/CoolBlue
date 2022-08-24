@@ -49,10 +49,7 @@ class SearchViewModel @Inject constructor(
         val minCharacterLengthToStartSearch = 2
         safeRequest {
             if (searchQuery.isEmpty() || searchQuery.length <= minCharacterLengthToStartSearch) {
-                val success = (currentViewState() as? SearchViewState.Success)
-                if (success != null) {
-                    updateViewState(success.copy(products = listOf()))
-                }
+                updateViewState(SearchViewState.ClearList)
             } else {
                 updateViewState(SearchViewState.Loading)
                 loadProduct.onNext(GetProductsUseCase.Params(searchQuery))
@@ -64,7 +61,6 @@ class SearchViewModel @Inject constructor(
         val newSearchThreshold = 400L
         loadProduct
             .debounce(newSearchThreshold, TimeUnit.MILLISECONDS)
-            .distinctUntilChanged()
             .switchMap { params -> getProductsUseCase.execute(params) }
             .subscribe(
                 { result -> handleGetProductsRequestResult(result) },
