@@ -5,6 +5,8 @@ import android.text.style.StrikethroughSpan
 import androidx.core.text.buildSpannedString
 import androidx.core.text.inSpans
 import com.example.core.mapper.Mapper
+import com.example.core.model.TextResource
+import com.example.shopping.R
 import com.example.shopping.domain.model.Product
 import com.example.shopping.presentation.search.model.AvailabilityStateUi
 import com.example.shopping.presentation.search.model.ProductUiModel
@@ -24,9 +26,12 @@ class ProductUiMapper @Inject constructor(
             nextDayDelivery = input.nextDayDelivery,
             productImage = input.productImage,
             productName = input.productName,
-            promoIconType = input.promoIcon?.let {promoIconUiMapper.map(it)},
-            reviewAverage = input.reviewInformation.reviewSummary.reviewAverage,
-            reviewCount = "${input.reviewInformation.reviewSummary.reviewCount} reviews",
+            promoIconType = input.promoIcon?.let { promoIconUiMapper.map(it) },
+            reviewAverage = input.reviewInformation.reviewSummary.reviewAverage / 2,
+            reviewCount = TextResource.fromStringId(
+                R.string.reviews,
+                input.reviewInformation.reviewSummary.reviewCount
+            ),
             salesPriceIncVat = input.salesPriceIncVat.toString(),
             uSPs = generateUSPs(input.uSPs)
         )

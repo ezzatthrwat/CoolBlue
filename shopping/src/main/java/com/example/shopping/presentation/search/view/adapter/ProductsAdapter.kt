@@ -8,6 +8,7 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import com.example.core.adapter.BaseListAdapter
 import com.example.core.extension.loadImage
+import com.example.core.model.asString
 import com.example.shopping.databinding.AdapterProductBinding
 import com.example.shopping.presentation.search.model.AvailabilityStateUi
 import com.example.shopping.presentation.search.model.ProductUiModel
@@ -32,7 +33,7 @@ class ProductsAdapter(
 
         binding.productNameTextView.text = item.productName
         binding.productRatingBar.rating = item.reviewAverage
-        binding.reviewsCountTextView.text = item.reviewCount
+        binding.reviewsCountTextView.text = item.reviewCount.asString(context.resources)
         binding.productDescriptionTextView.text = item.uSPs
         binding.productPriceTextView.text = item.salesPriceIncVat
 
@@ -50,7 +51,7 @@ class ProductsAdapter(
     }
 
     private fun bindRetailPriceTextView(binding: AdapterProductBinding, item: ProductUiModel) {
-        binding.retailPriceTextView.isInvisible = item.listPriceIncVat.toString().isNotEmpty()
+        binding.retailerPriceGroup.isInvisible = item.listPriceIncVat.toString().isEmpty()
         binding.retailPriceTextView.text = item.listPriceIncVat
     }
 

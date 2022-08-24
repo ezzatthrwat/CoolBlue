@@ -1,6 +1,7 @@
 package com.example.shopping.presentation.search.model
 
 import android.text.SpannedString
+import com.example.core.model.TextResource
 
 data class ProductUiModel(
     val availabilityState: AvailabilityStateUi,
@@ -12,7 +13,7 @@ data class ProductUiModel(
     val productName: String,
     val promoIconType: PromoIconUiModel?,
     val reviewAverage: Float,
-    val reviewCount: String,
+    val reviewCount: TextResource,
     val salesPriceIncVat: String,
     val uSPs: SpannedString
 )
