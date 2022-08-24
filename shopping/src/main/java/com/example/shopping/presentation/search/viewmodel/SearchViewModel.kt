@@ -1,6 +1,7 @@
 package com.example.shopping.presentation.search.viewmodel
 
 import com.example.core.base.viewmodel.BaseViewModel
+import com.example.core.scheduler.SchedulerProvider
 import com.example.core.util.NetworkChecker
 import com.example.shopping.domain.usecase.GetProductsUseCase
 import com.example.shopping.presentation.search.mapper.ProductUiMapper
@@ -9,6 +10,7 @@ import com.example.shopping.presentation.search.viewstate.SearchViewAction
 import com.example.shopping.presentation.search.viewstate.SearchViewEvent
 import com.example.shopping.presentation.search.viewstate.SearchViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
@@ -17,8 +19,11 @@ import javax.inject.Inject
 class SearchViewModel @Inject constructor(
     private val getProductsUseCase: GetProductsUseCase,
     private val productUiMapper: ProductUiMapper,
+    private val schedulerProvider: SchedulerProvider,
     private val networkChecker: NetworkChecker
 ) : BaseViewModel<SearchViewState, SearchViewEvent, SearchViewAction, SearchCoordinatorEvent>() {
+
+    private val compositeDisposable = CompositeDisposable()
 
     private val loadProduct = PublishSubject.create<GetProductsUseCase.Params>()
 
@@ -60,12 +65,14 @@ class SearchViewModel @Inject constructor(
     private fun initProductsSearchObservable() {
         val newSearchThreshold = 400L
         loadProduct
-            .debounce(newSearchThreshold, TimeUnit.MILLISECONDS)
+            .debounce(newSearchThreshold, TimeUnit.MILLISECONDS, schedulerProvider.io())
             .switchMap { params -> getProductsUseCase.execute(params) }
+            .subscribeOn(schedulerProvider.io())
+            .observeOn(schedulerProvider.ui())
             .subscribe(
                 { result -> handleGetProductsRequestResult(result) },
                 { error -> handleProductsLoadingError() }
-            )
+            ).also(compositeDisposable::add)
     }
 
     private fun loadNextPage() {
@@ -125,5 +132,10 @@ class SearchViewModel @Inject constructor(
         } else {
             updateViewEvent(SearchViewEvent.NoInternet)
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.clear()
     }
 }
