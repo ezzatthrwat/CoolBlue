@@ -30,7 +30,7 @@ object Dependencies {
     }
 
     object Jetpack {
-       const val lifecycleRuntime =
+        const val lifecycleRuntime =
             "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Jetpack.lifecycle}"
 
         const val navigationUi =
