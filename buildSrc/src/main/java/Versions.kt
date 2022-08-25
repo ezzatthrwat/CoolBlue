@@ -8,6 +8,7 @@ object Versions {
     object Kotlin {
         const val kotlin = "1.6.0"
         const val spotless = "6.6.1"
+        const val detekt = "1.18.1"
     }
 
     object AndroidX {

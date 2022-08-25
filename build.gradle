@@ -12,7 +12,12 @@ buildscript {
         classpath Dependencies.DI.daggerHiltPlugin
         classpath Dependencies.Jetpack.navigationSafeArgsPlugin
         classpath Dependencies.Kotlin.spotlessPlugin
+        classpath Dependencies.Kotlin.detektPlugin
     }
+}
+
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.18.1"
 }
 
 allprojects {
@@ -23,4 +28,5 @@ allprojects {
     }
 
     apply from: "$rootDir/quality/spotless.gradle"
+    apply from: "$rootDir/quality/detekt.gradle"
 }
