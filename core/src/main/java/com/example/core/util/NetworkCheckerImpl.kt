@@ -8,7 +8,6 @@ import android.os.Build
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-
 class NetworkCheckerImpl @Inject constructor(@ApplicationContext private val context: Context) :
     NetworkChecker {
 
@@ -21,7 +20,7 @@ class NetworkCheckerImpl @Inject constructor(@ApplicationContext private val con
             val activeNetwork = connectivityManager.activeNetwork
             val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)
             networkCapabilities != null &&
-                    networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
         } else {
             val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
             activeNetwork?.isConnected == true

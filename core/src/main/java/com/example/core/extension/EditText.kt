@@ -19,4 +19,3 @@ fun EditText.onChange(callBack: (String) -> Unit) {
         }
     )
 }
-

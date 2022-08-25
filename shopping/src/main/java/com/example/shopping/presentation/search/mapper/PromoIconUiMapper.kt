@@ -1,6 +1,5 @@
 package com.example.shopping.presentation.search.mapper
 
-
 import com.example.core.mapper.Mapper
 import com.example.shopping.R
 import com.example.shopping.domain.model.PromoIcon

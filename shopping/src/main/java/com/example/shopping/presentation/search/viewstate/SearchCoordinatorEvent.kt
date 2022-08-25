@@ -4,5 +4,5 @@ import com.example.core.navigation.CoordinatorEvent
 
 sealed class SearchCoordinatorEvent : CoordinatorEvent {
 
-   data class OpenDetails(val productId: Long) :SearchCoordinatorEvent()
+    data class OpenDetails(val productId: Long) : SearchCoordinatorEvent()
 }

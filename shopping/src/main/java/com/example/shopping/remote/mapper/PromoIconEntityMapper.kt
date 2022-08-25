@@ -10,7 +10,7 @@ import javax.inject.Inject
 class PromoIconEntityMapper @Inject constructor() : Mapper<PromoIconRemote?, PromoIconEntity?> {
 
     override fun map(input: PromoIconRemote?): PromoIconEntity? {
-       return input?.let {
+        return input?.let {
             assertEssentialParams(it)
             PromoIconEntity(
                 text = it.text!!,

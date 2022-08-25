@@ -8,6 +8,5 @@ interface ProductsRepository {
     fun getProducts(
         query: String,
         page: Int
-    ) : Single<ProductsResult>
-
+    ): Single<ProductsResult>
 }

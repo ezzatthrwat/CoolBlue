@@ -11,5 +11,4 @@ sealed class SearchViewEvent : ViewEvent {
     object ShowSendEmailToast : SearchViewEvent()
 
     object NoInternet : SearchViewEvent()
-
 }

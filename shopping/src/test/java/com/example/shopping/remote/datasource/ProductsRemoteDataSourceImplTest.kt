@@ -12,7 +12,6 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
 
-
 class ProductsRemoteDataSourceImplTest {
 
     private val api = mock<ProductsApi>()
@@ -22,7 +21,6 @@ class ProductsRemoteDataSourceImplTest {
         api = api,
         ProductsEntityMapper = productsEntityMapper
     )
-
 
     @Test
     fun `getProducts call the api with correct params`() {
@@ -40,7 +38,6 @@ class ProductsRemoteDataSourceImplTest {
         )
     }
 
-
     @Test
     fun `getProducts return data and complete`() {
 
@@ -52,13 +49,12 @@ class ProductsRemoteDataSourceImplTest {
         stubGetProducts(Single.just(productResultRemote))
         stubProductsEntityMapper(productResultEntity)
 
-       val testObservable =  productsRemoteDataSourceImpl.getProducts(
+        val testObservable = productsRemoteDataSourceImpl.getProducts(
             query = searchQuery, page = page
         ).test()
 
         testObservable.assertResult(productResultEntity)
     }
-
 
     private fun stubProductsEntityMapper(productResultEntity: ProductsResultEntity) {
         whenever(productsEntityMapper.map(any()))
@@ -70,4 +66,3 @@ class ProductsRemoteDataSourceImplTest {
             .thenReturn(single)
     }
 }
-

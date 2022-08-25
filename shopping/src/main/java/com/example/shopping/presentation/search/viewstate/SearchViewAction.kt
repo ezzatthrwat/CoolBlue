@@ -13,5 +13,4 @@ sealed class SearchViewAction : ViewAction {
     data class OpenProductDetails(val productId: Long) : SearchViewAction()
 
     object SendMailAction : SearchViewAction()
-
 }

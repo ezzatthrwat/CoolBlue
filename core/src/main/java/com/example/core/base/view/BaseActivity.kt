@@ -57,4 +57,3 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         host.navController.setGraph(graph, startDestination.args)
     }
 }
-

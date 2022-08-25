@@ -38,7 +38,6 @@ class ProductsRepositoryImplTest {
         )
     }
 
-
     @Test
     fun `getProducts return data and complete`() {
         val entity = ProductsResultFactory.makeProductsResultEntity()
@@ -55,7 +54,6 @@ class ProductsRepositoryImplTest {
 
         testObservable.assertResult(domain)
     }
-
 
     private fun stubProductsResultMapper(productResult: ProductsResult) {
         whenever(productsResultMapper.map(any()))

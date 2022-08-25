@@ -1,6 +1,5 @@
 package com.example.shopping.remote.model
 
-
 import com.squareup.moshi.Json
 
 data class ProductRemote(
@@ -29,8 +28,8 @@ data class ProductRemote(
     @field:Json(name = "USPs")
     val uSPs: List<String>?
 ) {
-    fun availabilityState() : AvailabilityStateRemote {
-        return when(availabilityState) {
+    fun availabilityState(): AvailabilityStateRemote {
+        return when (availabilityState) {
             2 -> AvailabilityStateRemote.AVAILABLE
             3 -> AvailabilityStateRemote.SOLD_OUT
             else -> AvailabilityStateRemote.SOLD_OUT

@@ -203,7 +203,6 @@ class SearchViewModelTest {
         assertEquals(expectedViewEvent, viewModel.viewEvent.value?.peekContent())
     }
 
-
     @Test
     fun `test viewModel post LoadNextPage send Success viewState with loadingNextPage equal true`() {
         val searchQuery = "Search"

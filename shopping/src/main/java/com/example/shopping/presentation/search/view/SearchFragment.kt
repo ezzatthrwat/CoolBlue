@@ -22,12 +22,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchFragment : BaseFragment<
-        SearchViewState,
-        SearchViewEvent,
-        SearchViewAction,
-        SearchCoordinatorEvent,
-        SearchViewModel,
-        FragmentSearchBinding>() {
+    SearchViewState,
+    SearchViewEvent,
+    SearchViewAction,
+    SearchCoordinatorEvent,
+    SearchViewModel,
+    FragmentSearchBinding>() {
 
     override val viewModel: SearchViewModel by viewModels()
 

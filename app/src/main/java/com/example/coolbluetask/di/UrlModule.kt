@@ -15,5 +15,4 @@ object UrlModule {
     @Singleton
     @Provides
     fun provideBaseUrl() = BaseUrl(BuildConfig.BASE_URL)
-
 }

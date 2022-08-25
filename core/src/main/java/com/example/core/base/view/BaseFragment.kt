@@ -19,13 +19,13 @@ import com.example.core.viewstate.ViewEvent
 import com.example.core.viewstate.ViewState
 
 abstract class BaseFragment<
-        VS : ViewState,
-        VE : ViewEvent,
-        VA : ViewAction,
-        CE : CoordinatorEvent,
-        VM : BaseViewModel<VS, VE, VA, CE>,
-        VB : ViewBinding
-        > : Fragment() {
+    VS : ViewState,
+    VE : ViewEvent,
+    VA : ViewAction,
+    CE : CoordinatorEvent,
+    VM : BaseViewModel<VS, VE, VA, CE>,
+    VB : ViewBinding
+    > : Fragment() {
 
     protected abstract val viewModel: VM
 
@@ -62,7 +62,8 @@ abstract class BaseFragment<
         viewModel.viewEvent.observe(viewLifecycleOwner, EventObserver { renderViewEvent(it) })
         viewModel.coordinatorEvent.observe(
             viewLifecycleOwner,
-            EventObserver { coordinatorEvent(it) })
+            EventObserver { coordinatorEvent(it) }
+        )
     }
 
     abstract fun renderViewState(viewState: VS)

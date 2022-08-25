@@ -25,14 +25,16 @@ object NetworkModule {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         httpClient.addInterceptor(interceptor)
-        httpClient.addInterceptor(Interceptor { chain: Interceptor.Chain ->
-            val original = chain.request()
-            val requestBuilder = original.newBuilder()
-                .addHeader("Accept", "application/json")
-                .addHeader("Content-Type", "application/json")
-            val request: Request = requestBuilder.build()
-            chain.proceed(request)
-        })
+        httpClient.addInterceptor(
+            Interceptor { chain: Interceptor.Chain ->
+                val original = chain.request()
+                val requestBuilder = original.newBuilder()
+                    .addHeader("Accept", "application/json")
+                    .addHeader("Content-Type", "application/json")
+                val request: Request = requestBuilder.build()
+                chain.proceed(request)
+            }
+        )
         return httpClient.build()
     }
 

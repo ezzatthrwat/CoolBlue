@@ -11,11 +11,11 @@ class ProductsEntityMapper @Inject constructor(
     private val productEntityMapper: ProductEntityMapper
 ) : Mapper<ProductsResultRemote, ProductsResultEntity> {
 
-    override fun map(input: ProductsResultRemote) : ProductsResultEntity {
+    override fun map(input: ProductsResultRemote): ProductsResultEntity {
 
         assertEssentialParams(input)
 
-        return ProductsResultEntity (
+        return ProductsResultEntity(
             currentPage = input.currentPage!!,
             pageCount = input.pageCount!!,
             productEntities = productEntityMapper.mapList(input.productRemotes!!),

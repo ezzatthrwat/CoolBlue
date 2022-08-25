@@ -22,7 +22,6 @@ internal abstract class RemoteModule {
         }
     }
 
-
     @Binds
     abstract fun bindProductsRemoteDataSource(dataSource: ProductsRemoteDataSourceImpl): ProductsRemoteDataSource
 }

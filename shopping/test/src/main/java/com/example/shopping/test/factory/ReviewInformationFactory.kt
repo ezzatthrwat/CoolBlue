@@ -29,5 +29,4 @@ object ReviewInformationFactory {
             reviewCount = randomInt()
         )
     )
-
 }

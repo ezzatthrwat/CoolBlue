@@ -11,6 +11,5 @@ interface ProductsApi {
     fun getProducts(
         @Query("query") query: String,
         @Query("page") page: Int
-    ) : Single<ProductsResultRemote>
-
+    ): Single<ProductsResultRemote>
 }

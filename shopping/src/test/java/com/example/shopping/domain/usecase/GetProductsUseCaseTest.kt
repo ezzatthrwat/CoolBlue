@@ -18,7 +18,6 @@ import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoInteractions
 import org.mockito.kotlin.whenever
 
-
 class GetProductsUseCaseTest {
 
     private val repository = mock<ProductsRepository>()
@@ -146,7 +145,6 @@ class GetProductsUseCaseTest {
         assertTrue(getProductsUseCase.hasMore)
     }
 
-
     @Test
     fun `has more is false when the current page is equal to returned pages count`() {
         val currentPage = 3
@@ -185,4 +183,3 @@ class GetProductsUseCaseTest {
             .thenReturn(single)
     }
 }
-

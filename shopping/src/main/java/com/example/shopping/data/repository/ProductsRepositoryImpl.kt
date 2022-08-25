@@ -16,5 +16,4 @@ class ProductsRepositoryImpl @Inject constructor(
         return productsRemoteDataSource.getProducts(query, page)
             .map { productsResultMapper.map(it) }
     }
-
 }

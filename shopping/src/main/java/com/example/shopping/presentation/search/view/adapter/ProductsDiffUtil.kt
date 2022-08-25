@@ -12,5 +12,4 @@ object ProductsDiffUtil : DiffUtil.ItemCallback<ProductUiModel>() {
     override fun areContentsTheSame(oldItem: ProductUiModel, newItem: ProductUiModel): Boolean {
         return oldItem == newItem
     }
-
 }

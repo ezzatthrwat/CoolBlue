@@ -22,4 +22,3 @@ fun RecyclerView.onEndReached(block: () -> Unit) {
         }
     )
 }
-

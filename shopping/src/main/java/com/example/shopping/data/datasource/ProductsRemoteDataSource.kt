@@ -6,8 +6,7 @@ import io.reactivex.rxjava3.core.Single
 interface ProductsRemoteDataSource {
 
     fun getProducts(
-         query: String,
-         page: Int
+        query: String,
+        page: Int
     ): Single<ProductsResultEntity>
-
 }

@@ -10,8 +10,8 @@ class ReviewInformationMapper @Inject constructor(
 ) : Mapper<ReviewInformationEntity, ReviewInformation> {
 
     override fun map(input: ReviewInformationEntity): ReviewInformation {
-       return ReviewInformation(
-           reviewSummary = reviewSummaryMapper.map(input.reviewSummaryEntity)
-       )
+        return ReviewInformation(
+            reviewSummary = reviewSummaryMapper.map(input.reviewSummaryEntity)
+        )
     }
 }

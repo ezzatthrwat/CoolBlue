@@ -1,6 +1,5 @@
 package com.example.shopping.remote.model
 
-
 import com.squareup.moshi.Json
 
 data class PromoIconRemote(

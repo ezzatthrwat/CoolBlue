@@ -29,5 +29,4 @@ object PromoIconFactory {
         text = randomString(),
         type = randomString()
     )
-
 }

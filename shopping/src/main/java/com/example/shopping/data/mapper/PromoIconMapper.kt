@@ -8,8 +8,8 @@ import javax.inject.Inject
 class PromoIconMapper @Inject constructor() : Mapper<PromoIconEntity?, PromoIcon?> {
 
     override fun map(input: PromoIconEntity?): PromoIcon? {
-       return input?.let {
-           PromoIcon(
+        return input?.let {
+            PromoIcon(
                 text = it.text,
                 type = it.type
             )

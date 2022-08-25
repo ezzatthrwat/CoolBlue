@@ -9,8 +9,8 @@ class ProductsResultMapper @Inject constructor(
     private val productMapper: ProductMapper
 ) : Mapper<ProductsResultEntity, ProductsResult> {
 
-    override fun map(input: ProductsResultEntity) : ProductsResult {
-        return ProductsResult (
+    override fun map(input: ProductsResultEntity): ProductsResult {
+        return ProductsResult(
             currentPage = input.currentPage,
             pageCount = input.pageCount,
             products = productMapper.mapList(input.productEntities),

@@ -1,5 +1,4 @@
 package com.example.shopping.test.factory
-import android.text.SpannedString
 import androidx.core.text.buildSpannedString
 import com.example.core.model.TextResource
 import com.example.core_testing.factory.DataFactory.randomBoolean
@@ -45,7 +44,6 @@ object ProductFactory {
         uSPs = listOf(randomString())
     )
 
-
     fun makeProductEntity() = ProductEntity(
         availabilityState = AvailabilityStateEntity.AVAILABLE,
         coolbluesChoiceInformationTitle = randomString(),
@@ -61,7 +59,6 @@ object ProductFactory {
         uSPs = listOf(randomString())
     )
 
-
     fun makeProductRemote() = ProductRemote(
         availabilityState = 2,
         coolbluesChoiceInformationTitle = randomString(),
@@ -76,6 +73,4 @@ object ProductFactory {
         salesPriceIncVat = randomFloat(),
         uSPs = listOf(randomString())
     )
-
-
 }
