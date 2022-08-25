@@ -34,7 +34,7 @@
 
 ### Auto Trigger
 
-[pull_request](https://github.com/ezzatthrwat/CoolBlue/blob/master/.github/workflows/pull_request.yml): any push will run the following tasks.
+[pull_request](https://github.com/ezzatthrwat/CoolBlue/blob/master/.github/workflows/pull_request.yml) : pull request will run the following tasks.
 * Spotless
 * Detekt
 * Unit Test
