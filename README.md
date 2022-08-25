@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-* [App architecture uml](https://drive.google.com/file/d/1UqPEQ9Dv4zovixI85bWCAAbDQrYparME/view?usp=sharing)
+* [App architecture uml](https://drive.google.com/file/d/1kobBDdYZzPepff_z0KJy7r91Yp9Q1gaX/view?usp=sharing)
 
 ## App Main Modules
 
@@ -13,7 +13,16 @@
 * :core contain app shared functions, data, utils and setups across modules
 * :core-testing to share tests setups and shared data across modules
 
-## App Files
+## App Technologies
+
+* MVVM
+* Modularization
+* Android Jetpack LiveData 
+* Android Jetpack Navigation
+* RxJava,RxKotlin,RxAndroid 
+* Retrofit
+* Moshi
+* Dagger Hilt 
 
 ## Code Style
 
@@ -25,7 +34,7 @@
 
 ### Auto Trigger
 
- 1-  [pull_request](https://github.com/ezzatthrwat/CoolBlue/blob/master/.github/workflows/pull_request.yml): any push will run the following tasks.
+[pull_request](https://github.com/ezzatthrwat/CoolBlue/blob/master/.github/workflows/pull_request.yml): any push will run the following tasks.
 * Spotless
 * Detekt
 * Unit Test
