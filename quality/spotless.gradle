@@ -1,0 +1,31 @@
+apply plugin: "com.diffplug.spotless"
+
+spotless {
+    def ktlintUserData = [
+            "max_line_length": "off",
+            "android":"true",
+            "disabled_rules": "import-ordering"
+    ]
+    kotlin {
+        target "**/src/**/*.kt", "**/src/**/*.kt"
+        ktlint("0.40.0").userData(ktlintUserData)
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+
+    format 'misc', {
+        target '**/*.gradle', '**/*.md', '**/.gitignore'
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    format 'xml', {
+        target '**/*.xml'
+        targetExclude '.idea/**'
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}

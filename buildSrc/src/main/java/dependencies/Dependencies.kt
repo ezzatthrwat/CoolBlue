@@ -12,6 +12,8 @@ object Dependencies {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.Kotlin.kotlin}"
         const val gradlePlugin =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Kotlin.kotlin}"
+        const val spotlessPlugin =
+            "com.diffplug.spotless:spotless-plugin-gradle:${Versions.Kotlin.spotless}"
     }
 
     object AndroidX {
