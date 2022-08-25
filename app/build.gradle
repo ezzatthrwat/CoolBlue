@@ -16,10 +16,6 @@ android {
         versionCode 1
         versionName "1.0"
         buildToolsVersion Config.buildTools
-
-//        testInstrumentationRunner Config.testInstrumentationRunner
-
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     testOptions {

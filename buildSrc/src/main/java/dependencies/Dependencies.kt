@@ -26,24 +26,8 @@ object Dependencies {
     }
 
     object Jetpack {
-        const val lifecycleViewModel =
-            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Jetpack.lifecycle}"
-        const val lifecycleLivedata =
-            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.Jetpack.lifecycle}"
-        const val lifecycleRuntime =
+       const val lifecycleRuntime =
             "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Jetpack.lifecycle}"
-        const val lifecycleViewModelSavedState =
-            "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.Jetpack.lifecycle}"
-        const val lifecycleLifecycleCompiler =
-            "androidx.lifecycle:lifecycle-compiler:${Versions.Jetpack.lifecycle}"
-        const val lifecycleCommonJava8 =
-            "androidx.lifecycle:lifecycle-common-java8:${Versions.Jetpack.lifecycle}"
-        const val lifecycleService =
-            "androidx.lifecycle:lifecycle-service:${Versions.Jetpack.lifecycle}"
-        const val lifecycleProcess =
-            "androidx.lifecycle:lifecycle-process:${Versions.Jetpack.lifecycle}"
-        const val lifecycleReactiveStreams =
-            "androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.Jetpack.lifecycle}"
 
         const val navigationUi =
             "androidx.navigation:navigation-fragment-ktx:${Versions.Jetpack.navigation}"
