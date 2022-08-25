@@ -1,0 +1,20 @@
+name: Pull Request CI
+on:
+  pull_request:
+
+jobs:
+  checks:
+    name: Run quality checks and unit test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Run Spotless
+        run: ./gradlew spotlessCheck --stacktrace
+
+      - name: Run Detekt
+        run: ./gradlew detekt --stacktrace
+
+      - name: Run Unit Tests
+        run: ./gradlew unitTest --stacktrace --no-daemon
