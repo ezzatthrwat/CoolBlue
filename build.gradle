@@ -30,3 +30,22 @@ allprojects {
     apply from: "$rootDir/quality/spotless.gradle"
     apply from: "$rootDir/quality/detekt.gradle"
 }
+
+task unitTest() {
+    allprojects { p ->
+        project.plugins.withId("com.android.base") {
+            if (name == "app") {
+                dependsOn "app:testDebugUnitTest"
+            } else if (name != "test") {
+                if (parent != null && parent.name != "CoolBlueTask" && parent.name != "android") {
+                    dependsOn "${parent.name}:${name}:testDebugUnitTest"
+                } else {
+                    dependsOn "${name}:testDebugUnitTest"
+                }
+            }
+        }
+        project.plugins.withId("java-library") {
+            dependsOn "${name}:test"
+        }
+    }
+}
